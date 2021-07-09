@@ -20,7 +20,7 @@
     "staging": "NODE_ENV=staging npm run build-staging && NODE_ENV=staging pm2 start ./dist/bundle.js --name api-token-staging"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.15.2",
     "compression": "^1.7.1",
     "cors": "^2.8.0",
