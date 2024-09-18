@@ -17,7 +17,9 @@
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "localdev": "NODE_ENV=localdev npm run build-local",
     "dev": "NODE_ENV=development npm run build-dev && NODE_ENV=development pm2 start ./dist/bundle.js --name api-token-develop",
-    "staging": "NODE_ENV=staging npm run build-staging && NODE_ENV=staging pm2 start ./dist/bundle.js --name api-token-staging"
+    "staging": "NODE_ENV=staging npm run build-staging && NODE_ENV=staging pm2 start ./dist/bundle.js --name api-token-staging",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -28,7 +30,7 @@
     "express": "^4.16.2",
     "express-form-data": "^2.0.6",
     "express-session": "^1.14.2",
-    "express-validator": "^4.3.0",
+    "express-validator": "^6.13.0",
     "extend": "^3.0.0",
     "mongodb": "^2.2.33",
     "morgan": "^1.7.0",
@@ -36,7 +38,8 @@
     "nem-sdk": "^1.6.6",
     "nodemailer": "^4.4.1",
     "nodemon": "^1.17.5",
-    "rxjs": "^5.5.7"
+    "rxjs": "^5.5.7",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.18",
@@ -83,5 +86,6 @@
     "webpack-env": "^0.8.0",
     "webpack-node-externals": "^1.6.0",
     "webpack-shell-plugin": "^0.5.0"
-  }
+  },
+  "snyk": true
 }
